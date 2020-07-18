@@ -1,0 +1,31 @@
+<div *ngIf="hero; then salir else sindetalles">
+
+    <!--  <h2>{{hero.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{hero.id}}</div>
+    <div>
+        <label>name:
+      <input [(ngModel)]="hero.name" placeholder="name"/>
+    </label>
+    </div>
+    <button (click)="goBack()">go back</button>
+    <button (click)="save()">save</button> -->
+</div>
+<!-- <div *ngIf="!hero">
+    No hay detalles<br>
+    <button type="button" class="btn btn-outline-primary" (click)="goBack()">regresar</button>
+</div> -->
+<ng-template #salir>
+    <h2>{{hero.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{hero.id}}</div>
+    <div>
+        <label>name:
+    <input [(ngModel)]="hero.name" placeholder="name"/>
+  </label>
+    </div>
+    <button (click)="goBack()">go back</button>
+    <button (click)="save()">save</button>
+</ng-template>
+<ng-template #sindetalles>
+    No hay detalles<br>
+    <button type="button" class="btn btn-outline-primary" (click)="goBack()">regresar</button>
+</ng-template>
